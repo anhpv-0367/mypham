@@ -1,0 +1,20 @@
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<%= will_paginate %>
+<table class="table">
+  <tr>
+    <th>STT</th>
+    <th>User Name</th>
+    <th>Email</th>
+  </tr>
+    <% @users.each_with_index do |user, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= link_to user.name, user %></td>
+        <td><%= user.email %></td>
+      </tr>
+    <% end %>
+</table>
+
+<%= will_paginate %>
