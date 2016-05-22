@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :product_find_params, only: [:show, :edit, :update]
 
   def index
-    @products = Product.paginate(page: params[:page]) if current_user.admin?
+    @products = Product.order(created_at: :desc).paginate(page: params[:page]) if current_user.admin?
   end
 
   def show
@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     if @product.save
       flash[:success] = "success!"
-      redirect_to @product
+      redirect_to products_path
     else
       render 'new'
     end

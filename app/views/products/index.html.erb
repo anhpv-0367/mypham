@@ -1,6 +1,7 @@
 <% provide(:title, 'All products') %>
 <h1>All products</h1>
-
+<div class= "row col-md-offset-10"><%= link_to "create new products", new_product_path, class: "btn btn-primary" %></div>
+<br>
 <%= will_paginate %>
 <table class="table">
   <tr>
