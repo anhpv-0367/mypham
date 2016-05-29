@@ -1,31 +1,9 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "ShmilyShopp", root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Help", help_path %></li>
-        <% if logged_in? %>
-          <% if current_user.admin? %>
-            <li><%= link_to "Users", users_path %></li>
-            <li><%= link_to "Products", products_path %></li>
-          <% end %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-              <li class="divider"></li>
-              <li>
-                <%= link_to "Log out", logout_path, method: "delete" %>
-              </li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "Log in", login_path %></li>
-        <% end %>
-      </ul>
-    </nav>
+<div id="header">
+  <div class="top_right">
+    <div class="languages">
+      <div class="lang_text">Languages:</div>
+      <a href="#" class="lang"><img src="assets/images/en.gif" alt="" border="0" /></a> <a href="#" class="lang"><img src="assets/images/de.gif" alt="" border="0" /></a> </div>
+    <div class="big_banner"> <a href="#"><img src="assets/images/banner728.jpg" alt="" border="0" /></a> </div>
   </div>
-</header>
+  <div id="logo"> <a href="#"><img src="assets/images/logo.png" alt="" border="0" width="182" height="85" /></a> </div>
+</div>
