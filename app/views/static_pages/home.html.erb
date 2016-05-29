@@ -1,124 +1,92 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>Online Movie Store</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="style.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-<div id="wrapper">
-  <div id="inner">
-    <div id="header">
-      <h1><img src="images/logo.gif" width="519" height="63" alt="Online Movie Store" /></h1>
-      <div id="nav"> <a href="#">HOME</a> | <a href="#">view cart</a> | <a href="#">help</a> </div>
-      <!-- end nav -->
-      <a href="#"><img src="images/header_1.jpg" width="744" height="145" alt="Harry Potter cd" /></a> <a href="#"><img src="images/header_2.jpg" width="745" height="48" alt="" /></a> </div>
-    <!-- end header -->
-    <dl id="browse">
-      <dt>Full Category Lists</dt>
-      <dd class="first"><a href="#">Action &amp; Adventure</a></dd>
-      <dd><a href="#">Anime &amp; Manga</a></dd>
-      <dd><a href="#">Art House &amp; International</a></dd>
-      <dd><a href="#">Classics</a></dd>
-      <dd><a href="#">Comedy</a></dd>
-      <dd><a href="#">Cult Movies</a></dd>
-      <dd><a href="#">Drama</a></dd>
-      <dd><a href="#">New &amp; Future Releases</a></dd>
-      <dd><a href="#">Horror</a></dd>
-      <dd><a href="#">Musicals</a></dd>
-      <dd><a href="#">Mystery &amp; Suspense</a></dd>
-      <dd><a href="#">Science Fiction &amp; Fantasy</a></dd>
-      <dd class="last"><a href="#">Westerns</a></dd>
-      <dt>Search Your Favourite Movie</dt>
-      <dd class="searchform">
-        <form action="#" method="get">
-          <div>
-            <select name="cat">
-              <option value="-" selected="selected">CATEGORIES</option>
-              <option value="-">------------</option>
-            </select>
-          </div>
-          <div>
-            <input name="q" type="text" value="DVD TITLE" class="text" />
-          </div>
-          <div class="softright">
-            <input type="image" src="images/btn_search.gif" />
-          </div>
-        </form>
-      </dd>
-    </dl>
-    <div id="body">
-      <div class="inner">
-        <div class="leftbox">
-          <h3>Star Wars Trilogy (Widescreen Edition)</h3>
-          <img src="images/photo_1.jpg" width="93" height="95" alt="photo 1" class="left" />
-          <p><b>Price:</b> <b>$225.97</b> &amp; eligible for FREE Super Saver Shipping on orders over <b>$195</b>.</p>
-          <p><b>Availability:</b> Usually ships within 24 hours</p>
-          <p class="readmore"><a href="#">BUY <b>NOW</b></a></p>
-          <div class="clear"></div>
-        </div>
-        <!-- end .leftbox -->
-        <div class="rightbox">
-          <h3>Batman - The Animated Series </h3>
-          <img src="images/photo_4.jpg" width="107" height="91" alt="photo 4" class="left" />
-          <p><b>Price:</b> <b>$125</b> &amp; eligible for FREE Super Saver Shipping on orders over <b>$105</b>.</p>
-          <p><b>Availability:</b> Usually ships within 24 hours</p>
-          <p class="readmore"><a href="#">BUY <b>NOW</b></a></p>
-          <div class="clear"></div>
-        </div>
-        <!-- end .rightbox -->
-        <div class="clear br"></div>
-        <div class="leftbox">
-          <h3>Harry Potter and the Prisoner of Azkaban </h3>
-          <img src="images/photo_2.jpg" width="93" height="101" alt="photo 2" class="left" />
-          <p><b>Price:</b> <b>$350</b> &amp; eligible for FREE Super Saver Shipping on orders over <b>$295</b>.</p>
-          <p><b>Availability:</b> Usually ships within 24 hours</p>
-          <p class="readmore"><a href="#">BUY <b>NOW</b></a></p>
-          <div class="clear"></div>
-        </div>
-        <!-- end .leftbox -->
-        <div class="rightbox">
-          <h3>Blade - Trinity (New Platinum Series)</h3>
-          <img src="images/photo_5.jpg" width="90" height="103" alt="photo 5" class="left" />
-          <p><b>Price:</b> <b>$115</b> &amp; eligible for FREE Super Saver Shipping on orders over <b>$95</b>.</p>
-          <p><b>Availability:</b> Usually ships within 24 hours</p>
-          <p class="readmore"><a href="#">BUY <b>NOW</b></a></p>
-          <div class="clear"></div>
-        </div>
-        <!-- end .rightbox -->
-        <div class="clear br"></div>
-        <div class="leftbox">
-          <h3>Million Dollar Baby (Widescreen Edition)</h3>
-          <img src="images/photo_3.jpg" width="106" height="100" alt="photo 3" class="left" />
-          <p><b>Price:</b> <b>$105.97</b> &amp; eligible for FREE Super Saver Shipping on orders over <b>$99</b>.</p>
-          <p><b>Availability:</b> Usually ships within 24 hours</p>
-          <p class="readmore"><a href="#">BUY <b>NOW</b></a></p>
-          <div class="clear"></div>
-        </div>
-        <!-- end .leftbox -->
-        <div class="rightbox">
-          <h3>The Matrix Reloaded (Full Screen Edition)</h3>
-          <img src="images/photo_6.jpg" width="91" height="99" alt="photo 6" class="left" />
-          <p><b>Price:</b> <b>$75</b> &amp; eligible for FREE Super Saver Shipping on orders over <b>$55</b>.</p>
-          <p><b>Availability:</b> Usually ships within 24 hours</p>
-          <p class="readmore"><a href="#">BUY <b>NOW</b></a></p>
-          <div class="clear"></div>
-        </div>
-        <!-- end .rightbox -->
-        <div class="clear"></div>
+<title>Tools Shop</title>
+<div id="main_container">
+  <%= render "layouts/header" %>
+  <div id="main_content">
+    <%= render "left_content" %>
+    <!-- end of left content -->
+    <div class="center_content">
+      <div class="oferta"> <img src="assets/images/p1.png" width="165" height="113" border="0" class="oferta_img" alt="" />
+        <div class="oferta_details">
+          <div class="oferta_title">Power Tools BST18XN Cordless</div>
+          <div class="oferta_text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </div>
+          <a href="#" class="prod_buy">details</a> </div>
       </div>
-      <!-- end .inner -->
+      <div class="center_title_bar">Latest Products</div>
+      <div class="prod_box">
+        <div class="center_prod_box">
+          <div class="product_title"><a href="#">Makita 156 MX-VL</a></div>
+          <div class="product_img"><a href="#"><img src="assets/images/p1.jpg" alt="" border="0" /></a></div>
+          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+        </div>
+        <div class="prod_details_tab"> <a href="#" class="prod_buy">Add to Cart</a> <a href="#" class="prod_details">Details</a> </div>
+      </div>
+      <div class="prod_box">
+        <div class="center_prod_box">
+          <div class="product_title"><a href="#">Bosch XC</a></div>
+          <div class="product_img"><a href="#"><img src="assets/images/p2.jpg" alt="" border="0" /></a></div>
+          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+        </div>
+        <div class="prod_details_tab"> <a href="#" class="prod_buy">Add to Cart</a> <a href="#" class="prod_details">Details</a> </div>
+      </div>
+      <div class="prod_box">
+        <div class="center_prod_box">
+          <div class="product_title"><a href="#">Lotus PP4</a></div>
+          <div class="product_img"><a href="#"><img src="assets/images/p4.jpg" alt="" border="0" /></a></div>
+          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+        </div>
+        <div class="prod_details_tab"> <a href="#" class="prod_buy">Add to Cart</a> <a href="#" class="prod_details">Details</a> </div>
+      </div>
+      <div class="prod_box">
+        <div class="center_prod_box">
+          <div class="product_title"><a href="#">Makita 156 MX-VL</a></div>
+          <div class="product_img"><a href="#"><img src="assets/images/p3.jpg" alt="" border="0" /></a></div>
+          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+        </div>
+        <div class="prod_details_tab"> <a href="#" class="prod_buy">Add to Cart</a> <a href="#" class="prod_details">Details</a> </div>
+      </div>
+      <div class="prod_box">
+        <div class="center_prod_box">
+          <div class="product_title"><a href="#">Bosch XC</a></div>
+          <div class="product_img"><a href="#"><img src="assets/images/p5.jpg" alt="" border="0" /></a></div>
+          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+        </div>
+        <div class="prod_details_tab"> <a href="#" class="prod_buy">Add to Cart</a> <a href="#" class="prod_details">Details</a> </div>
+      </div>
+      <div class="prod_box">
+        <div class="center_prod_box">
+          <div class="product_title"><a href="#">Lotus PP4</a></div>
+          <div class="product_img"><a href="#"><img src="assets/images/p6.jpg" alt="" border="0" /></a></div>
+          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+        </div>
+        <div class="prod_details_tab"> <a href="#" class="prod_buy">Add to Cart</a> <a href="#" class="prod_details">Details</a> </div>
+      </div>
+      <div class="center_title_bar">Recomended Products</div>
+      <div class="prod_box">
+        <div class="center_prod_box">
+          <div class="product_title"><a href="#">Makita 156 MX-VL</a></div>
+          <div class="product_img"><a href="#"><img src="assets/images/p7.jpg" alt="" border="0" /></a></div>
+          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+        </div>
+        <div class="prod_details_tab"> <a href="#" class="prod_buy">Add to Cart</a> <a href="#" class="prod_details">Details</a> </div>
+      </div>
+      <div class="prod_box">
+        <div class="center_prod_box">
+          <div class="product_title"><a href="#">Bosch XC</a></div>
+          <div class="product_img"><a href="#"><img src="assets/images/p1.jpg" alt="" border="0" /></a></div>
+          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+        </div>
+        <div class="prod_details_tab"> <a href="#" class="prod_buy">Add to Cart</a> <a href="#" class="prod_details">Details</a> </div>
+      </div>
+      <div class="prod_box">
+        <div class="center_prod_box">
+          <div class="product_title"><a href="#">Lotus PP4</a></div>
+          <div class="product_img"><a href="#"><img src="assets/images/p3.jpg" alt="" border="0" /></a></div>
+          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+        </div>
+        <div class="prod_details_tab"> <a href="#" class="prod_buy">Add to Cart</a> <a href="#" class="prod_details">Details</a> </div>
+      </div>
     </div>
-    <!-- end body -->
-    <div class="clear"></div>
-    <div id="footer"> Web design by <a href="http://www.freewebsitetemplates.com">free website templates</a> &nbsp;
-      <div id="footnav"> <a href="#">Legal</a> | <a href="#">Home</a> </div>
-      <!-- end footnav -->
-    </div>
-    <!-- end footer -->
+    <%= render "right_content" %>
   </div>
-  <!-- end inner -->
+  <%= render "layouts/footer" %>
 </div>
-<!-- end wrapper -->
-</body>
-</html>
