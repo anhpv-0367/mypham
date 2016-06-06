@@ -1,70 +1,53 @@
 <div id="menu_tab">
   <ul class="menu">
-    <li><%= link_to "ShmilyShopp", root_path, class: "nav" %></li>
+    <li><%= link_to "TRANG CHỦ", root_path, class: "nav" %></li>
     <li class="divider"></li>
-    <li><a href="#" class="nav">Specials</a></li>
+    <li><a href="#" class="nav">Giới thiệu</a></li>
     <li class="divider"></li>
-    <li><a href="#" class="nav">Shipping </a></li>
+    <li><a href="#" class="nav">Bán buôn, sỉ</a></li>
     <li class="divider"></li>
-    <li><%= link_to "Contact", contact_path, class: "nav" %></li>
+    <li><%= link_to "Liên hệ", contact_path, class: "nav" %></li>
     <li class="divider"></li>
-    <li><a href="#" class="nav">Details</a></li>
+    <li><a href="#" class="nav">KHUYẾN MÃI</a></li>
     <% if logged_in? %>
       <% if current_user.admin? %>
+        <li class="divider"> | </li>
+        <li><a href="/products" class="nav">QUẢN LÝ SẢN PHẨM</a></li>
         <li class="divider"></li>
-        <li><a href="/products" class="nav">Products</a></li>
-        <li class="divider"></li>
-        <li><a href="/users" class="nav">Users</a></li>
+        <li><a href="/users" class="nav">QUẢN LÝ NGƯỜI DÙNG</a></li>
       <% end %>
     <% end %>
-    <li>
-      <ul class=" navbar-right">
-        <% if logged_in? %>
-          <li class="dropdown">
-            <a href="#" class="divider dropdown-toggle" data-toggle="dropdown">
-              <%= current_user.name %> <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-              <li>
-                <%= link_to "Log out", logout_path, method: "delete" %>
-              </li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "Log in", login_path %></li>
-        <% end %>
-      </ul>
-    </li>
   </ul>
 </div>
+<br>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+      </span>
+    </div>
+  </div>
+</div>
+<br>
 <!-- end of menu tab -->
 <div class="left_content">
-  <div class="title_box">Categories</div>
+  <div class="title_box">DANH MỤC SẢN PHẨM</div>
   <ul class="left_menu">
-    <li class="odd"><a href="#">Power Tools</a></li>
-    <li class="even"><a href="#">Air Tools</a></li>
-    <li class="odd"><a href="#">Hand Tools</a></li>
-    <li class="even"><a href="#">Accessories</a></li>
-    <li class="odd"><a href="#">Workwear</a></li>
-    <li class="even"><a href="#">Spare Parts</a></li>
-    <li class="odd"><a href="#">Power Tools</a></li>
-    <li class="even"><a href="#">Air Tools</a></li>
-    <li class="odd"><a href="#">Hand Tools</a></li>
-    <li class="even"><a href="#">Accessories</a></li>
-    <li class="odd"><a href="#">Workwear</a></li>
-    <li class="even"><a href="#">Spare Parts</a></li>
+    <li class="odd"><a href="#">MỸ PHẨM LÀM SẠCH</a></li>
+    <li class="even"><a href="#">MỸ PHẨM DƯỠNG DA</a></li>
+    <li class="odd"><a href="#"> MỸ PHẨM TRANG ĐIỂM</a></li>
+    <li class="even"><a href="#">MỸ PHẨM ĐẶC TRỊ</a></li>
+    <li class="odd"><a href="#">SALON TÓC</a></li>
+    <li class="even"><a href="#">THỰC PHẨM DƯỠNG THỂ</a></li>
+    <li class="odd"><a href="#">MỸ PHẨM NƯỚC HOA</a></li>
+    <li class="even"><a href="#">PHỤ KIỆN TRANG ĐIỂM</a></li>
   </ul>
-  <div class="title_box">Special Products</div>
+  <div class="title_box">SẢN PHẨM ĐẶC BIỆT</div>
   <div class="border_box">
     <div class="product_title"><a href="#">Makita 156 MX-VL</a></div>
     <div class="product_img"><a href="#"><img src="assets/images/p1.jpg" alt="" border="0" /></a></div>
     <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
   </div>
-  <div class="title_box">Newsletter</div>
-  <div class="border_box">
-    <input type="text" name="newsletter" class="newsletter_input" value="your email"/>
-    <a href="#" class="join">subscribe</a> </div>
-  <div class="banner_adds"> <a href="#"><img src="assets/images/bann2.jpg" alt="" border="0" /></a> </div>
 </div>
