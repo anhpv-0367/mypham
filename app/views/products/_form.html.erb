@@ -12,6 +12,8 @@
       <%= f.label :category %>
       <%= f.select :category, options_for_select(["Son", "Cham soc da", "tri mun"],
         selected: @product.category), {}, {class: "form-control"} %>
+      <%= f.label :pre_price %>
+      <%= f.text_field :pre_price, class: 'form-control' %>
       <%= f.label :price %>
       <%= f.text_field :price, class: 'form-control' %>
 
