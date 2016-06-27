@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :check_admin?, only: [:update]
-  before_action :product_find_params, only: [:show, :edit, :update]
+  before_action :product_find_params, only: [:show, :edit, :update, :destroy]
 
   def index
     @products = Product.order(created_at: :desc).paginate(page: params[:page]) if current_user.admin?
@@ -15,9 +15,11 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    image = params[:product][:avatar]
-    @uploader = ImageUploader.new(@product, image)
-    @uploader.store!(File.open(image.path))
+    if params[:product][:avatar].present?
+      image = params[:product][:avatar]
+      @uploader = ImageUploader.new(@product, image)
+      @uploader.store!(File.open(image.path))
+    end
     if @product.save
       flash[:success] = "success!"
       redirect_to products_path
@@ -36,6 +38,11 @@ class ProductsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @product.destroy
+    redirect_to products_path
   end
 
   private
