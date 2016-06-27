@@ -3,64 +3,37 @@
 <div id="main_container">
   <%= render "layouts/header" %>
   <div id="main_content">
-    <%= render "left_content" %>
+    <%= render "layouts/left_content" %>
     <!-- end of left content -->
     <div class="center_content">
-      <div class="oferta"> <img src="assets/images/p1.png" width="165" height="113" border="0" class="oferta_img" alt="" />
-        <div class="oferta_details">
-          <div class="oferta_title">Power Tools BST18XN Cordless</div>
-          <div class="oferta_text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </div>
-          <a href="#" class="prod_buy">details</a> </div>
+      <div class="oferta">
+        <% if Product.all.last.present? %>
+          <%= image_tag( Product.all.last.avatar_url, size:"165x165", class:"oferta_img") if Product.all.last.avatar? %>
+          <div class="oferta_details">
+            <div class="oferta_title"><%= Product.all.last.name %></div>
+            <div class="oferta_text"><%= Product.all.last.description %></div>
+            <a href="#" class="prod_buy">details</a>
+          </div>
+        <% end %>
       </div>
       <div class="center_title_bar">Sản phẩm mới</div>
-      <div class="prod_box">
-        <div class="center_prod_box">
-          <div class="product_title"><a href="#">Makita 156 MX-VL</a></div>
-          <div class="product_img"><a href="#"><img src="assets/images/p1.jpg" alt="" border="0" /></a></div>
-          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+      <% Product.all.each do |product| %>
+        <div class="prod_box">
+          <div class="center_prod_box">
+            <div class="product_title"><%=product.name%></div>
+            <div class="product_img">
+              <a href="#">
+                <%= image_tag( product.avatar_url, size:"171x171") if product.avatar? %>
+              </a>
+            </div>
+            <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+          </div>
+          <div class="prod_details_tab">
+            <a href="#" class="prod_buy">Add to Cart</a>
+            <%= link_to "Details", product, class:"prod_details" %>
+          </div>
         </div>
-        <div class="prod_details_tab"> <a href="#" class="prod_buy">Add to Cart</a> <a href="#" class="prod_details">Details</a> </div>
-      </div>
-      <div class="prod_box">
-        <div class="center_prod_box">
-          <div class="product_title"><a href="#">Bosch XC</a></div>
-          <div class="product_img"><a href="#"><img src="assets/images/p2.jpg" alt="" border="0" /></a></div>
-          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
-        </div>
-        <div class="prod_details_tab"> <a href="#" class="prod_buy">Add to Cart</a> <a href="#" class="prod_details">Details</a> </div>
-      </div>
-      <div class="prod_box">
-        <div class="center_prod_box">
-          <div class="product_title"><a href="#">Lotus PP4</a></div>
-          <div class="product_img"><a href="#"><img src="assets/images/p4.jpg" alt="" border="0" /></a></div>
-          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
-        </div>
-        <div class="prod_details_tab"> <a href="#" class="prod_buy">Add to Cart</a> <a href="#" class="prod_details">Details</a> </div>
-      </div>
-      <div class="prod_box">
-        <div class="center_prod_box">
-          <div class="product_title"><a href="#">Makita 156 MX-VL</a></div>
-          <div class="product_img"><a href="#"><img src="assets/images/p3.jpg" alt="" border="0" /></a></div>
-          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
-        </div>
-        <div class="prod_details_tab"> <a href="#" class="prod_buy">Add to Cart</a> <a href="#" class="prod_details">Details</a> </div>
-      </div>
-      <div class="prod_box">
-        <div class="center_prod_box">
-          <div class="product_title"><a href="#">Bosch XC</a></div>
-          <div class="product_img"><a href="#"><img src="assets/images/p5.jpg" alt="" border="0" /></a></div>
-          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
-        </div>
-        <div class="prod_details_tab"> <a href="#" class="prod_buy">Add to Cart</a> <a href="#" class="prod_details">Details</a> </div>
-      </div>
-      <div class="prod_box">
-        <div class="center_prod_box">
-          <div class="product_title"><a href="#">Lotus PP4</a></div>
-          <div class="product_img"><a href="#"><img src="assets/images/p6.jpg" alt="" border="0" /></a></div>
-          <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
-        </div>
-        <div class="prod_details_tab"> <a href="#" class="prod_buy">Add to Cart</a> <a href="#" class="prod_details">Details</a> </div>
-      </div>
+      <% end %>
       <div class="center_title_bar">Sản phẩm bán chạy</div>
       <div class="prod_box">
         <div class="center_prod_box">

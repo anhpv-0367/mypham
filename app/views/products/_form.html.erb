@@ -6,11 +6,21 @@
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
 
+      <%= f.label :description %>
+      <%= f.text_area :description, class: 'form-control' %>
+
       <%= f.label :category %>
       <%= f.select :category, options_for_select(["Son", "Cham soc da", "tri mun"],
         selected: @product.category), {}, {class: "form-control"} %>
       <%= f.label :price %>
       <%= f.text_field :price, class: 'form-control' %>
+
+      <p>
+        <label>My Avatar</label>
+        <%= image_tag(@product.avatar_url, size:"60x60") if @product.avatar? %>
+        <%= f.file_field :avatar %>
+        <%= f.hidden_field :avatar_cache %>
+      </p>
 
       <%= f.submit "Save", class: "btn btn-primary" %>
     <% end %>

@@ -15,6 +15,9 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    image = params[:product][:avatar]
+    @uploader = ImageUploader.new(@product, image)
+    @uploader.store!(File.open(image.path))
     if @product.save
       flash[:success] = "success!"
       redirect_to products_path
@@ -38,7 +41,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :category, :price)
+    params.require(:product).permit(:name, :category, :price, :avatar, :description)
   end
 
   def product_find_params
