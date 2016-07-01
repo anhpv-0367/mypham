@@ -1,9 +1,15 @@
 class ProductsController < ApplicationController
   before_action :check_admin?, only: [:update]
   before_action :product_find_params, only: [:show, :edit, :update, :destroy]
-
   def index
-    @products = Product.order(created_at: :desc).paginate(page: params[:page]) if current_user.admin?
+    # @products = Product.order(created_at: :desc).paginate(page: params[:page]) if current_user.admin?
+    if current_user.admin?
+      # params[:q][:category_cont] = params[:q][:category_cont].to_i if params[:q][:category_cont].present?
+      @q = Product.ransack(params[:q])
+      @products = @q.result(distinct: true)
+    else
+      redirect_to root_path
+    end
   end
 
   def show

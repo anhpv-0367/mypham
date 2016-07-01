@@ -4,17 +4,19 @@
   <div id="main_content">
     <%= render "layouts/left_content" %>
     <div class="center_content">
+      <div><%= render "search_form_for" %></div>
       <h1>All products</h1>
       <div><%= link_to "create new products", new_product_path, class: "btn btn-primary" %></div>
       <br>
-      <%= will_paginate %>
       <table class="table">
         <tr>
           <th>STT</th>
-          <th>Product Name</th>
-          <th>category</th>
-          <th>Price</th>
+          <th><%= sort_link(@q, :name, 'Product Name', default_order: :desc) %></th>
+          <th><%= sort_link(@q, :category, 'Category', default_order: :desc) %></th>
+          <th>Pr Price</th>
+          <th><%= sort_link(@q, :price, 'Price', default_order: :desc) %></th>
           <th>Avatar</th>
+          <th><%= sort_link(@q, :created_at, 'Created', default_order: :desc) %></th>
           <th>Edit</th>
           <th>Delete</th>
         </tr>
@@ -23,14 +25,15 @@
               <td><%= index + 1 %></td>
               <td><%= link_to product.name, product %></td>
               <td><%= product.category %></td>
+              <td><%= product.pre_price %></td>
               <td><%= product.price %></td>
               <td><%= image_tag(product.avatar_url, size: "60x60") if product.avatar? %></td>
+              <td><%= product.created_at %></td>
               <td><%= link_to "Edit", edit_product_path(product) %></td>
               <td><%= link_to "Delete", product_path(product), method: :delete %></td>
             </tr>
           <% end %>
       </table>
-      <%= will_paginate %>
     </div>
   </div>
   <%= render "layouts/footer" %>
