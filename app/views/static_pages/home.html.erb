@@ -17,7 +17,7 @@
         <% end %>
       </div>
       <div class="center_title_bar">Sản phẩm mới</div>
-      <% Product.all.each do |product| %>
+      <% @products.each do |product| %>
         <div class="prod_box">
           <div class="center_prod_box">
             <div class="product_title"><%=product.name%></div>

@@ -5,7 +5,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :description
       t.float :pre_price
       t.float :price
-      t.string :category
+      t.integer :category
       t.boolean :special
 
       t.timestamps null: false

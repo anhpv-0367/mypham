@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20160627025709) do
     t.string   "description"
     t.float    "pre_price"
     t.float    "price"
-    t.string   "category"
+    t.integer  "category"
     t.boolean  "special"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

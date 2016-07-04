@@ -1,0 +1,17 @@
+<% provide(:title, @product.name) %>
+<div id="main_container">
+  <%= render "layouts/header" %>
+  <div id="main_content">
+    <%= render "layouts/left_content" %>
+    <div class="center_content">
+      <div class="center_title_bar"></div>
+      <div class="prod_box_big">
+        <div class="form_row">
+          <%= image_tag(@product.avatar_url, size:"100x100") if @product.avatar? %>
+        </div>
+        <div class="form_row"><%= @product.name %></div>
+      </div>
+    </div>
+  </div>
+  <%= render "layouts/footer" %>
+</div>

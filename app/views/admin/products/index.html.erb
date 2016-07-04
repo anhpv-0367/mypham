@@ -5,6 +5,8 @@
     <%= render "layouts/left_content" %>
     <div class="center_content">
       <h1>All products</h1>
+      <div><%= link_to "create new products", new_admin_product_path, class: "btn btn-primary" %></div>
+      <br>
       <table class="table">
         <tr>
           <th>STT</th>
@@ -14,6 +16,8 @@
           <th><%= sort_link(@q, :price, 'Price', default_order: :desc) %></th>
           <th>Avatar</th>
           <th><%= sort_link(@q, :created_at, 'Created', default_order: :desc) %></th>
+          <th>Edit</th>
+          <th>Delete</th>
         </tr>
           <% @products.each_with_index do |product, index| %>
             <tr>
@@ -24,6 +28,8 @@
               <td><%= product.price %></td>
               <td><%= image_tag(product.avatar_url, size: "60x60") if product.avatar? %></td>
               <td><%= product.created_at.strftime("%m/%d/%Y") %></td>
+              <td><%= link_to "Edit", edit_admin_product_path(product) %></td>
+              <td><%= link_to "Delete", admin_product_path(product), method: :delete %></td>
             </tr>
           <% end %>
       </table>
