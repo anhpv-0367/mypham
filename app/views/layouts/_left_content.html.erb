@@ -15,28 +15,71 @@
         <li><%= link_to "Manage", admin_products_path, class: "nav" %></li>
       <% end %>
     <% end %>
+    <li>
+      <%= render "layouts/search_form_for", url: url %>
+    </li>
   </ul>
 </div>
-<br>
-<%= render "layouts/search_form_for" %>
-<br>
+
+<!--- banner -->
+<div class="container">
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <%= image_tag("images/banner.jpg", size: "500x500") %>
+      </div>
+
+      <div class="item">
+        <%= image_tag("images/banner1.jpg", size: "500x500") %>
+      </div>
+
+      <div class="item">
+        <%= image_tag("images/banner2.jpg", size: "500x500") %>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
 <!-- end of menu tab -->
 <div class="left_content">
   <div class="title_box">DANH MỤC SẢN PHẨM</div>
   <ul class="left_menu">
-    <li class="even"><%= link_to "Son", root_path(category: 0) , name: :category, class: "even" %></li>
-    <li class="odd"><%= link_to "Cham soc da", root_path(category: 1), class: "even" %></li>
-    <li class="even"><%= link_to "Tri mun", root_path(category: 2), class: "even" %></li>
+    <li class="even"><%= link_to "Tất cả", url, name: :category %></li>
+    <li class="even"><%= link_to "Son", url + "?category=0" , name: :category %></li>
+    <li class="even"><%= link_to "Cham soc da", url + "?category=1" %></li>
+    <li class="even"><%= link_to "Tri mun", url + "?category=2" %></li>
   </ul>
   <div class="title_box">SẢN PHẨM ĐẶC BIỆT</div>
   <div class="border_box">
-    <% if Product.all.last.present? %>
-      <div class="product_title"><%= Product.all.last.name %></div>
-      <div><a href="#"><%= image_tag( Product.all.last.avatar_url, size:"165x165", class:"product_img") if Product.all.last.avatar? %></a></div>
-      <div class="prod_price">
-        <span class="reduce"><%= Product.all.last.pre_price %>$</span>
-        <span class="price"><%= Product.all.last.price %>$</span>
+    <div class="prod_box">
+      <div class="center_prod_box">
+        <% if Product.all.last.present? %>
+          <div><a href="/products/<%= Product.all.last.id %>"><%= image_tag( Product.all.last.avatar_url, size:"165x165", class:"product_img") if Product.all.last.avatar? %></a></div>
+          <div class="product_title"><%= Product.all.last.name %></div>
+          <div class="prod_price">
+            <span class="reduce"><%= Product.all.last.pre_price %>$</span>
+            <span class="price"><%= Product.all.last.price %>$</span>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>

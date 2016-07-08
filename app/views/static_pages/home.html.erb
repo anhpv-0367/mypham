@@ -3,29 +3,19 @@
 <div id="main_container">
   <%= render "layouts/header" %>
   <div id="main_content">
-    <%= render "layouts/left_content" %>
+    <%= render "layouts/left_content", url: @url %>
     <!-- end of left content -->
     <div class="center_content">
-      <div class="oferta">
-        <% if Product.all.last.present? %>
-          <%= image_tag( Product.all.last.avatar_url, size:"165x165", class:"oferta_img") if Product.all.last.avatar? %>
-          <div class="oferta_details">
-            <div class="oferta_title"><%= Product.all.last.name %></div>
-            <div class="oferta_text"><%= Product.all.last.description %></div>
-            <a href="#" class="prod_buy">details</a>
-          </div>
-        <% end %>
-      </div>
       <div class="center_title_bar">Sản phẩm mới</div>
       <% @products.each do |product| %>
         <div class="prod_box">
           <div class="center_prod_box">
-            <div class="product_title"><%=product.name%></div>
             <div class="product_img">
-              <a href="#">
+              <a href="/products/<%= product.id %>">
                 <%= image_tag( product.avatar_url, size:"171x171") if product.avatar? %>
               </a>
             </div>
+            <div class="product_title"><%=product.name%></div>
             <div class="prod_price"><span class="reduce"><%= product.pre_price %>$</span> <span class="price"><%= product.price %>$</span></div>
           </div>
           <div class="prod_details_tab">
@@ -34,7 +24,6 @@
           </div>
         </div>
       <% end %>
-      <div class="center_title_bar">Sản phẩm bán chạy</div>
     </div>
   </div>
   <%= render "layouts/footer" %>

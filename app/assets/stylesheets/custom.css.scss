@@ -2,7 +2,7 @@
 @import "bootstrap";
 
 body {
-  background:url(images/bg.jpg) repeat-x #e4e9ec top;
+  background:url(images/bg.png);
   padding:0;
   font-family:Arial, Helvetica, sans-serif;
   font-size:12px;
@@ -24,10 +24,10 @@ p{
 
 #header{
   width:1200px;
-  height:120px;
-  background:url(images/header_bg.jpg) no-repeat center;
-  background-size: 1200px 120px;
-  background-position:0px 0px;
+  // height:120px;
+  // background:url(images/header_bg.jpg) no-repeat center;
+  // background-size: 1200px 120px;
+  // background-position:0px 0px;
   margin:auto;
 }
 
@@ -69,19 +69,19 @@ padding:0 5px 0 5px;
 }
 /*---------------- menu tab----------------------*/
 #menu_tab{
+  background:url(images/menu_bg.png) no-repeat center;
+  background-size: 1200px 40px;
   width:1200px;
   height:40px;
-  /*background:url(images/menu_bg.gif) repeat-x;*/
-  background: #0a569b;
 }
 ul.menu {
+  background:url(images/menu_bg.png) no-repeat center;
+  background-size: 1182px 40px;
   list-style-type:none;
   float:left;
   display:block; width:1182px;
   margin:0px;
   padding:0px;
-  background: #0a569b;
-  /*background:url(images/menu_bg.gif) repeat-x;*/
 }
 
 ul.menu li {
@@ -97,7 +97,32 @@ ul.menu li.divider {
   width:4px;
   height:36px;
   float:left;
-  /*background:url(images/menu_divider.gif) no-repeat center;*/
+}
+
+.category {
+  background:url(images/menu_bg.png) no-repeat center;
+  background-size: 900px 60px;
+  list-style-type:none;
+  float:left;
+  display:block; width:900px;
+  margin:0px;
+  padding:0px;
+}
+
+ul.category_menu {
+  background:url(images/menu_bg.png) no-repeat center;
+  background-size: 950px 60px;
+  list-style-type:none;
+  float:left;
+  display:block; width:950px;
+  margin:0px;
+  padding:0px;
+
+  display:inline;
+  font-size:12px;
+  font-weight:bold;
+  line-height:40px;
+  color: #fff
 }
 
 a.nav:link, a.nav:visited {
@@ -116,9 +141,16 @@ a.nav:hover{
   margin:0 14px 0 14px;
   height:36px;
   text-decoration:none;
-  color:#199ECD;
+  color:#FF0;
 }
 
+/*-------------------carousel-inner------------------------*/
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 50%;
+      height: 400px;
+      margin: auto;
+  }
 /*----------------crumb_navigation-------------*/
 .crumb_navigation{
   width:1180px;
@@ -170,12 +202,12 @@ ul.left_menu li{
 }
 
 ul.left_menu li.odd a{
-  width:166px;height:25px;display:block; border-bottom:1px #e4e4e4 dashed;
+  width:175px;height:30px;display:block; border-bottom:1px #e4e4e4 dashed;
   text-decoration:none;color:#504b4b;padding:0 0 0 14px; line-height:25px;
 }
 
 ul.left_menu li.even a{
-  width:166px;height:25px;display:block; border-bottom:1px #e4e4e4 dashed; background-color:#f0f4f5;
+  width:175px;height:30px;display:block; border-bottom:1px #e4e4e4 dashed;
   text-decoration:none;color:#504b4b;padding:0 0 0 14px; line-height:25px;
 }
 
@@ -287,11 +319,11 @@ a.join{
 .center_content{
   width:1000px;
   float:left;
-  padding:5px 10px 5px 15px;
+  padding:5px 0px 0px 50px;
 }
 
 .center_title_bar{
-  width:1000px;
+  width:950px;
   height:31px;
   float:left;
   padding:0 0 0 10px;
