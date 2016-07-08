@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@product) do |f| %>
+    <%= form_for([:admin, @product]) do |f| %>
       <%= render 'shared/error_messages', object: @product %>
 
       <%= f.label :name %>
@@ -10,7 +10,7 @@
       <%= f.text_area :description, class: 'form-control' %>
 
       <%= f.label :category %>
-      <%= f.select :category, options_for_select(["Son", "Cham soc da", "tri mun"]), {}, {class: "form-control"} %>
+      <%= f.select :category, options_for_select([["Son", 0], ["Cham soc da", 1], ["Tri mun", 2]], selected: selected), {}, {class: "form-control"} %>
       <%= f.label :pre_price %>
       <%= f.text_field :pre_price, class: 'form-control' %>
       <%= f.label :price %>

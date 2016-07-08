@@ -12,42 +12,31 @@
     <% if logged_in? %>
       <% if current_user.admin? %>
         <li class="divider"> | </li>
-        <li><a href="/products" class="nav">QUẢN LÝ SẢN PHẨM</a></li>
-        <li class="divider"></li>
-        <li><a href="/users" class="nav">QUẢN LÝ NGƯỜI DÙNG</a></li>
+        <li><%= link_to "Manage", admin_products_path, class: "nav" %></li>
       <% end %>
     <% end %>
   </ul>
 </div>
 <br>
-<div class="row">
-  <div class="col-md-10 col-md-offset-1">
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
-      </span>
-    </div>
-  </div>
-</div>
+<%= render "layouts/search_form_for" %>
 <br>
 <!-- end of menu tab -->
 <div class="left_content">
   <div class="title_box">DANH MỤC SẢN PHẨM</div>
   <ul class="left_menu">
-    <li class="odd"><a href="#">MỸ PHẨM LÀM SẠCH</a></li>
-    <li class="even"><a href="#">MỸ PHẨM DƯỠNG DA</a></li>
-    <li class="odd"><a href="#"> MỸ PHẨM TRANG ĐIỂM</a></li>
-    <li class="even"><a href="#">MỸ PHẨM ĐẶC TRỊ</a></li>
-    <li class="odd"><a href="#">SALON TÓC</a></li>
-    <li class="even"><a href="#">THỰC PHẨM DƯỠNG THỂ</a></li>
-    <li class="odd"><a href="#">MỸ PHẨM NƯỚC HOA</a></li>
-    <li class="even"><a href="#">PHỤ KIỆN TRANG ĐIỂM</a></li>
+    <li class="even"><%= link_to "Son", root_path(category: 0) , name: :category, class: "even" %></li>
+    <li class="odd"><%= link_to "Cham soc da", root_path(category: 1), class: "even" %></li>
+    <li class="even"><%= link_to "Tri mun", root_path(category: 2), class: "even" %></li>
   </ul>
   <div class="title_box">SẢN PHẨM ĐẶC BIỆT</div>
   <div class="border_box">
-    <div class="product_title"><a href="#">Makita 156 MX-VL</a></div>
-    <div class="product_img"><a href="#"><%= image_tag("images/p1.jpg") %></a></div>
-    <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
+    <% if Product.all.last.present? %>
+      <div class="product_title"><%= Product.all.last.name %></div>
+      <div><a href="#"><%= image_tag( Product.all.last.avatar_url, size:"165x165", class:"product_img") if Product.all.last.avatar? %></a></div>
+      <div class="prod_price">
+        <span class="reduce"><%= Product.all.last.pre_price %>$</span>
+        <span class="price"><%= Product.all.last.price %>$</span>
+      </div>
+    <% end %>
   </div>
 </div>

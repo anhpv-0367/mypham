@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   before_destroy :remove_image, if: :avatar?
+  enum category: [ "Son", "Cham soc da","Tri mun" ]
 
   private
 
