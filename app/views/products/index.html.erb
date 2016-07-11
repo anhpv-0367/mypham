@@ -2,31 +2,34 @@
 <div id="main_container">
   <%= render "layouts/header" %>
   <div id="main_content">
-    <%= render "layouts/left_content" %>
+    <%= render "layouts/left_content", url: @url %>
     <div class="center_content">
-      <h1>All products</h1>
-      <table class="table">
-        <tr>
-          <th>STT</th>
-          <th><%= sort_link(@q, :name, 'Product Name', default_order: :desc) %></th>
-          <th><%= sort_link(@q, :category, 'Category', default_order: :desc) %></th>
-          <th>Pr Price</th>
-          <th><%= sort_link(@q, :price, 'Price', default_order: :desc) %></th>
-          <th>Avatar</th>
-          <th><%= sort_link(@q, :created_at, 'Created', default_order: :desc) %></th>
-        </tr>
-          <% @products.each_with_index do |product, index| %>
-            <tr>
-              <td><%= index + 1 %></td>
-              <td><%= link_to product.name, product %></td>
-              <td><%= product.category %></td>
-              <td><%= product.pre_price %></td>
-              <td><%= product.price %></td>
-              <td><%= image_tag(product.avatar_url, size: "60x60") if product.avatar? %></td>
-              <td><%= product.created_at.strftime("%m/%d/%Y") %></td>
-            </tr>
-          <% end %>
-      </table>
+      <div class="category">
+        <ul class="category_menu">
+          <li>
+            <p style="text-transform: uppercase;color: #FFD68F;font-weight: bold;line-height:50px;text-indent: 29px;font-size:18px;float:left;"><%= @category %></p>
+            <p style="float:right;color: #FFD68F;line-height:50px;font-size:12px;margin-right: 20px;">Có tất cả <span style="color:red;font-size:14px"><%= @product_count %></span> sản phẩm</p>
+          </li>
+        </ul>
+      </div>
+      <% @products.each do |product| %>
+        <div class="prod_box">
+          <div class="center_prod_box">
+            <div class="product_img">
+              <a href="/products/<%= product.id %>">
+                <%= image_tag( product.avatar_url, size:"171x171") if product.avatar? %>
+              </a>
+            </div>
+            <div class="product_title"><%=product.name%></div>
+            <div class="prod_price"><span class="reduce"><%= product.pre_price %>$</span> <span class="price"><%= product.price %>$</span></div>
+          </div>
+          <div class="prod_details_tab">
+            <a href="#" class="prod_buy">Add to Cart</a>
+            <%= link_to "Details", product, class:"prod_details" %>
+          </div>
+        </div>
+      <% end %>
+      <div class="row"><%= will_paginate @products %></div>
     </div>
   </div>
   <%= render "layouts/footer" %>
