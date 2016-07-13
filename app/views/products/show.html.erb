@@ -3,15 +3,25 @@
   <%= render "layouts/header" %>
   <div id="main_content">
     <%= render "layouts/left_content", url: @url %>
-    <div class="center_content">
-      <div class="center_title_bar"></div>
-      <div class="prod_box_big">
-        <div class="form_row">
-          <%= image_tag(@product.avatar_url, size:"100x100") if @product.avatar? %>
+    <% if @product.present? %>
+      <div class="center_content">
+        <div class="center_title_bar"></div>
+        <div class="border_box">
+          <div class="prod_box">
+            <div class="center_prod_box">
+              <div><%= image_tag( @product.avatar_url, size:"165x165", class:"product_img") if @product.avatar? %></a></div>
+              <div class="product_title"><%= @product.name %></div>
+              <div class="prod_price">
+                <span class="reduce"><%= @product.pre_price %>$</span>
+                <span class="price"><%= @product.price %>$</span>
+              </div>
+
+            </div>
+          </div>
         </div>
-        <div class="form_row"><%= @product.name %></div>
       </div>
-    </div>
+      <span class="col-md-10"><%=  Product.first.description %></span>
+    <% end %>
   </div>
   <%= render "layouts/footer" %>
 </div>

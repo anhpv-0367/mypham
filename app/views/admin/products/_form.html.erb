@@ -7,23 +7,48 @@
       <%= f.text_field :name, class: 'form-control' %>
 
       <%= f.label :description %>
-      <%= f.text_area :description, class: 'form-control' %>
+      <%= f.text_area :description, class: 'form-control', rows:"20" %>
 
       <%= f.label :category %>
-      <%= f.select :category, options_for_select([["Son", 0], ["Cham soc da", 1], ["Tri mun", 2]], selected: selected), {}, {class: "form-control"} %>
+      <%= f.select :category, options_for_select(
+        [["Tẩy da chết", "tay-da-chet"],
+          ["Sữa rửa mặt", "sua-rua-mat"],
+          ["Dầu gội", "dau-goi"],
+          ["Mặt nạ", "mat-na"],
+          ["Phấn BB, lót, nền", "phan-bb-lot-nen"],
+          ["Phấn phủ, nước", "phan-phu-nuoc"],
+          ["Son môi, dưỡng", "son-moi-duong"],
+          ["Trang điểm mắt", "trang-diem-mat"],
+          ["Kit dưỡng da", "kit-duong-da"],
+          ["Nước hoa hồng", "nuoc-hoa-hong"],
+          ["Xịt khoáng", "xit-khoang"],
+          ["Sữa dưỡng", "sua-duong"],
+          ["Kem chống nắng", "kem-chong-nang"],
+          ["Trị nám, tàn nhang", "tri-nam-tan-nhang"],
+          ["Trị mụn", "tri-mun"],
+          ["Tắm trắng", "tam-trang"],
+          ["Kem dưỡng", "kem-duong"],
+          ["Sữa tắm", "sua-tam"],
+          ["Bột ngũ cốc", "bot-ngu-coc"],
+          ["Bột dưỡng da thiên nhiên", "bot-duong-da-thien-nhien"],
+          ["Nước hoa Nam", "nuoc-hoa-nam"],
+          ["Nước hoa Nữ", "nuoc-hoa-nu"]
+          ], selected: selected), {}, {class: "form-control"} %>
       <%= f.label :pre_price %>
       <%= f.text_field :pre_price, class: 'form-control' %>
       <%= f.label :price %>
       <%= f.text_field :price, class: 'form-control' %>
-
       <p>
-        <label>My Avatar</label>
-        <%= image_tag(@product.avatar_url, size:"60x60") if @product.avatar? %>
+        <% if @product.avatar? %>
+          <label>My Avatar</label>
+          <%= image_tag(@product.avatar_url, size:"60x60") %>
+        <% end %>
         <%= f.file_field :avatar %>
         <%= f.hidden_field :avatar_cache %>
       </p>
 
       <%= f.submit "Save", class: "btn btn-primary" %>
+      <%= link_to "Back", admin_products_path, class: "col-md-offset-9 btn btn-default" %>
     <% end %>
   </div>
 </div>
