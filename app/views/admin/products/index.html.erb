@@ -6,7 +6,13 @@
     <div class="center_content">
       <div><%= link_to "create new products", new_admin_product_path, class: "btn btn-primary" %></div>
       <br>
-      <div class="text-right">products: <%= @product_count %></div>
+      <div class="category">
+        <ul class="category_menu">
+          <li>
+            <p style="float:right;color: #FFD68F;line-height:50px;font-size:12px;margin-right: 20px;">Có tất cả <span style="color:red;font-size:14px"><%= @product_count %></span> sản phẩm</p>
+          </li>
+        </ul>
+      </div>
       <table class="table">
         <tr>
           <th>STT</th>

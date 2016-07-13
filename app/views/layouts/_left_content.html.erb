@@ -22,51 +22,10 @@
 </div>
 
 <!--- banner -->
-<div class="container">
-  <br>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <%= image_tag("images/banner.jpg", size: "500x500") %>
-      </div>
-
-      <div class="item">
-        <%= image_tag("images/banner1.jpg", size: "500x500") %>
-      </div>
-
-      <div class="item">
-        <%= image_tag("images/banner2.jpg", size: "500x500") %>
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
+<%= render "layouts/banner" %>
 <!-- end of menu tab -->
 <div class="left_content">
-  <div class="title_box">DANH MỤC SẢN PHẨM</div>
-  <ul class="left_menu">
-    <li class="even"><%= link_to "Tất cả", url, name: :category %></li>
-    <li class="even"><%= link_to "Son", url + "?category=0" , name: :category %></li>
-    <li class="even"><%= link_to "Cham soc da", url + "?category=1" %></li>
-    <li class="even"><%= link_to "Tri mun", url + "?category=2" %></li>
-  </ul>
+  <%= render "layouts/list_products", url: url %>
   <div class="title_box">SẢN PHẨM ĐẶC BIỆT</div>
   <div class="border_box">
     <div class="prod_box">
