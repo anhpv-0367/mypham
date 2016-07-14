@@ -20,7 +20,12 @@
               </a>
             </div>
             <div class="product_title"><%=product.name%></div>
-            <div class="prod_price"><span class="reduce"><%= product.pre_price %>$</span> <span class="price"><%= product.price %>$</span></div>
+            <div class="prod_price">
+              <% if product.pre_price.present? %>
+                <span class="reduce"><%= product.pre_price %>$</span>
+              <% end %>
+              <span class="price"><%= product.price %>$</span>
+            </div>
           </div>
           <div class="prod_details_tab">
             <a href="#" class="prod_buy">Add to Cart</a>
