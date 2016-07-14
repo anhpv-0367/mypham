@@ -12,7 +12,9 @@
               <div><%= image_tag( @product.avatar_url, size:"165x165", class:"product_img") if @product.avatar? %></a></div>
               <div class="product_title"><%= @product.name %></div>
               <div class="prod_price">
-                <span class="reduce"><%= @product.pre_price %>$</span>
+                <% if @product.pre_price.present? %>
+                  <span class="reduce"><%= @product.pre_price %>$</span>
+                <% end %>
                 <span class="price"><%= @product.price %>$</span>
               </div>
 
@@ -20,7 +22,7 @@
           </div>
         </div>
       </div>
-      <span class="col-md-10"><%=  Product.first.description %></span>
+      <span class="col-md-10"><%= raw @product.description %></span>
     <% end %>
   </div>
   <%= render "layouts/footer" %>
