@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="carousel slide multi-item-carousel" id="theCarousel">
+    <div class="carousel-inner">
+      <div class="item active">
+        <div class="col-xs-4"><a href="#1">
+          <div class="prod_box">
+            <div class="center_prod_box">
+              <div class="product_img">
+                <a href="/products/<%= Product.all.first.id %>">
+                  <%= image_tag( Product.all.first.avatar_url, size:"171x171") if Product.all.first.avatar? %>
+                </a>
+              </div>
+              <div class="product_title"><%= Product.all.first.name%></div>
+              <div class="prod_price">
+              <% if Product.all.first.pre_price.present? %>
+                <span class="reduce"><%= Product.all.first.pre_price %>$</span>
+              <% end %>
+              <span class="price"><%= Product.all.first.price %>$</span></div>
+              <div class="prod_details_tab">
+                <button class="prod_buy">Mua hàng</button>
+                <%= link_to "Chi tiết", Product.all.first, class:"prod_details" %>
+              </div>
+            </div>
+          </div>
+        </a></div>
+      </div>
+      <% Product.all.each do |product|%>
+        <div class="item">
+          <div class="col-xs-4"><a href="#1">
+            <div class="prod_box">
+              <div class="center_prod_box">
+                <div class="product_img">
+                  <a href="/products/<%= product.id %>">
+                    <%= image_tag( product.avatar_url, size:"171x171") if product.avatar? %>
+                  </a>
+                </div>
+                <div class="product_title"><%=product.name%></div>
+                <div class="prod_price">
+                <% if product.pre_price.present? %>
+                  <span class="reduce"><%= product.pre_price %>$</span>
+                <% end %>
+                <span class="price"><%= product.price %>$</span></div>
+                <div class="prod_details_tab">
+                  <button class="prod_buy">Mua hàng</button>
+                  <%= link_to "Chi tiết", product, class:"prod_details" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+    <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+  </div>
+</div>

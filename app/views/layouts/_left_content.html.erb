@@ -29,9 +29,9 @@
   <div class="title_box">SẢN PHẨM ĐẶC BIỆT</div>
   <div class="border_box">
     <div class="prod_box">
-      <div class="center_prod_box">
+      <div class="special_prod_box">
         <% if Product.all.last.present? %>
-          <div><a href="/products/<%= Product.all.last.id %>"><%= image_tag( Product.all.last.avatar_url, size:"165x165", class:"product_img") if Product.all.last.avatar? %></a></div>
+          <div><a href="/products/<%= Product.all.last.id %>"><%= image_tag( Product.all.last.avatar_url, size:"150x150", class:"product_img") if Product.all.last.avatar? %></a></div>
           <div class="product_title"><%= Product.all.last.name %></div>
           <div class="prod_price">
             <span class="reduce"><%= Product.all.last.pre_price %>$</span>

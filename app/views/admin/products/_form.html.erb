@@ -34,9 +34,9 @@
           ["Nước hoa Nữ", "nuoc-hoa-nu"]
           ], selected: selected), {}, {class: "form-control"} %>
       <%= f.label :pre_price %>
-      <%= f.text_field :pre_price, class: 'form-control' %>
+      <%= f.number_field :pre_price, class: 'form-control' %>
       <%= f.label :price %>
-      <%= f.text_field :price, class: 'form-control' %>
+      <%= f.number_field :price, value: 0, class: 'form-control', step: 0.01 %>
       <p>
         <% if @product.avatar? %>
           <label>My Avatar</label>

@@ -21,10 +21,10 @@
               <span class="reduce"><%= product.pre_price %>$</span>
             <% end %>
             <span class="price"><%= product.price %>$</span></div>
-          </div>
-          <div class="prod_details_tab">
-            <a href="#" class="prod_buy">Add to Cart</a>
-            <%= link_to "Details", product, class:"prod_details" %>
+            <div class="prod_details_tab">
+              <button class="prod_buy">Mua hàng</button>
+              <%= link_to "Chi tiết", product, class:"prod_details" %>
+            </div>
           </div>
         </div>
       <% end %>
