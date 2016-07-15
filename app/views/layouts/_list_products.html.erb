@@ -3,9 +3,17 @@
   <li class="even"><%= link_to "Tất cả", url, name: :category %></li>
   <div class="dropdown">
     <li class="even">
-      <%= link_to "Mỹ phẩm làm sạch", url + "?category=my-pham-lam-sach" , name: :category %>
+      <%= link_to  url + "?category=my-pham-lam-sach" do %>
+        <div class="row">
+          <div class="col-xs-9">
+            Mỹ phẩm làm sạch
+          </div>
+          <div class="col-xs-2">
+            <i class="glyphicon glyphicon-triangle-right"></i>
+          </div>
+        </div>
+      <% end %>
     </li>
-    <i class="icon icon-caret-right"></i>
     <div class="dropdown-content">
       <%= link_to "Tẩy da chết", url + "?category=tay-da-chet" %>
       <%= link_to "Sữa rửa mặt", url + "?category=sua-rua-mat" %>
@@ -13,8 +21,20 @@
       <%= link_to "Mặt nạ", url + "?category=mat-na" %>
     </div>
   </div>
+
   <div class="dropdown">
-    <li class="even"><%= link_to "Mỹ phẩm trang điểm", url + "?category=my-pham-trang-diem" %></li>
+    <li class="even">
+      <%= link_to  url + "?category=my-pham-trang-diem" do %>
+        <div class="row">
+          <div class="col-xs-9">
+            Mỹ phẩm trang điểm
+          </div>
+          <div class="col-xs-2">
+            <i class="glyphicon glyphicon-triangle-right"></i>
+          </div>
+        </div>
+      <% end %>
+    </li>
     <div class="dropdown-content">
       <%= link_to "Phấn BB, lót, nền", url + "?category=phan-bb-lot-nen" %>
       <%= link_to "Phấn phủ, nước", url + "?category=phan-phu-nuoc" %>
@@ -23,7 +43,18 @@
     </div>
   </div>
   <div class="dropdown">
-    <li class="even"><%= link_to "Mỹ phẩm dưỡng da", url + "?category=my-pham-duong-da" %></li>
+    <li class="even">
+      <%= link_to  url + "?category=my-pham-duong-da" do %>
+        <div class="row">
+          <div class="col-xs-9">
+            Mỹ phẩm dưỡng da
+          </div>
+          <div class="col-xs-2">
+            <i class="glyphicon glyphicon-triangle-right"></i>
+          </div>
+        </div>
+      <% end %>
+    </li>
     <div class="dropdown-content">
       <%= link_to "Kit dưỡng da", url + "?category=kit-duong-da" %>
       <%= link_to "Nước hoa hồng", url + "?category=nuoc-hoa-hong" %>
@@ -34,7 +65,18 @@
   </div>
 
   <div class="dropdown">
-    <li class="even"><%= link_to "Mỹ phẩm đặc trị", url + "?category=my-pham-dac-tri" %></li>
+    <li class="even">
+      <%= link_to  url + "?category=my-pham-dac-tri" do %>
+        <div class="row">
+          <div class="col-xs-9">
+            Mỹ phẩm đặc trị
+          </div>
+          <div class="col-xs-2">
+            <i class="glyphicon glyphicon-triangle-right"></i>
+          </div>
+        </div>
+      <% end %>
+    </li>
     <div class="dropdown-content">
       <%= link_to "Trị nám, tàn nhang", url + "?category=tri-nam-tan-nhang" %>
       <%= link_to "Trị mụn", url + "?category=tri-mun" %>
@@ -42,7 +84,18 @@
   </div>
 
   <div class="dropdown">
-    <li class="even"><%= link_to "Dưỡng thể", url + "?category=duong-the" %></li>
+    <li class="even">
+      <%= link_to  url + "?category=duong-the" do %>
+        <div class="row">
+          <div class="col-xs-9">
+            Dưỡng thể
+          </div>
+          <div class="col-xs-2">
+            <i class="glyphicon glyphicon-triangle-right"></i>
+          </div>
+        </div>
+      <% end %>
+    </li>
     <div class="dropdown-content">
       <%= link_to "Tắm trắng", url + "?category=tam-trang" %>
       <%= link_to "Kem dưỡng", url + "?category=kem-duong" %>
@@ -52,7 +105,18 @@
   <li class="even"><%= link_to "Bột ngũ cốc", url + "?category=bot-ngu-coc" %></li>
   <li class="even"><%= link_to "Bột dưỡng da thiên nhiên", url + "?category=bot-duong-da-thien-nhien" %></li>
   <div class="dropdown">
-    <li class="even"><%= link_to "Nước hoa", url + "?category=nuoc-hoa" %></li>
+    <li class="even">
+      <%= link_to  url + "?category=nuoc-hoa" do %>
+        <div class="row">
+          <div class="col-xs-9">
+            Nước hoa
+          </div>
+          <div class="col-xs-2">
+            <i class="glyphicon glyphicon-triangle-right"></i>
+          </div>
+        </div>
+      <% end %>
+    </li>
     <div class="dropdown-content">
       <%= link_to "Nam", url + "?category=nuoc-hoa-nam" %>
       <%= link_to "Nữ", url + "?category=nuoc-hoa-nu" %>

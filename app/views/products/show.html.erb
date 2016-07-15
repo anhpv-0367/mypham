@@ -6,24 +6,61 @@
     <% if @product.present? %>
       <div class="center_content">
         <div class="center_title_bar"></div>
-        <div class="border_box">
-          <div class="prod_box">
-            <div class="center_prod_box">
-              <div><%= image_tag( @product.avatar_url, size:"165x165", class:"product_img") if @product.avatar? %></a></div>
-              <div class="product_title"><%= @product.name %></div>
-              <div class="prod_price">
-                <% if @product.pre_price.present? %>
-                  <span class="reduce"><%= @product.pre_price %>$</span>
-                <% end %>
-                <span class="price"><%= @product.price %>$</span>
-              </div>
+        <div class="row">
+          <div class="row">
+            <div class="col-xs-5">
+              <div><%= image_tag( @product.avatar_url, size:"380x380") if @product.avatar? %></a></div>
+            </div>
+            <div class="col-xs-6">
+              <h1><div class="product_title"><%= @product.name %></div></h1>
+              <table class="table">
+                <tr>
+                  <th>Giá sản phẩm:</th>
+                  <td>
+                    <div class="prod_price">
+                      <% if @product.pre_price.present? %>
+                        <span class="reduce"><%= @product.pre_price %>$</span>
+                      <% end %>
+                      <span class="price"><%= @product.price %>$</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Khối lượng</th>
+                  <td>
+                  </td>
+                </tr>
 
+                <tr>
+                  <th>Thể tích</th>
+                  <td>
+                  </td>
+                </tr>
+              </table>
+              <p><strong><u>GIAO HÀNG TOÀN QUỐC:</u></strong><br>
+              <strong>Hà Nội:</strong> MIỄN PHÍ giao và thanh toán tại nhà trong 24h Đơn &gt; 150k<br>
+              --------------------------------------------------------</p>
+              <strong>TP.HCM và Tỉnh thành  khác:</strong>
+              <p>- MIỄN PHÍ giao hàng áp dụng cho đơn hàng mua từ số lượng 2sp cho các sản phẩm nhẹ như son, phấn dưới 25g.</p>
+              <p>- Free Ship Với Đơn Hàng Chuyển Khoản Trước .</p>
+              <p>- MIỄN  PHÍ giao hàng và phí COD đơn hàng từ 500k </p>
             </div>
           </div>
         </div>
+        <br>
+        <br>
+        <div class="row">
+          <h2>Thông tin sản phẩm</h2>
+          <span><%= raw @product.description %></span>
+        </div>
+        <br>
+        <div class="center_title_bar">Sản phẩm liên quan</div>
+        <br>
       </div>
-      <span class="col-md-10"><%= raw @product.description %></span>
     <% end %>
+  </div>
+  <div class="footer_banner">
+    <%= render "layouts/another_products" %>
   </div>
   <%= render "layouts/footer" %>
 </div>

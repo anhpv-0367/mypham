@@ -6,9 +6,9 @@
     <% if @product.present? %>
       <div class="center_content">
         <div class="center_title_bar"></div>
-        <div class="border_box">
-          <div class="prod_box col-md-5">
-            <div class="row">
+        <div class="row">
+          <div class="border_box">
+            <div class="prod_box">
               <div class="center_prod_box">
                 <div><%= image_tag( @product.avatar_url, size:"165x165", class:"product_img") if @product.avatar? %></a></div>
                 <div class="product_title"><%= @product.name %></div>
@@ -23,8 +23,10 @@
             </div>
           </div>
         </div>
+        <div>
+          <span><%= raw @product.description %></span>
+        </div>
       </div>
-      <span class="col-md-10"><%= raw @product.description %></span>
     <% end %>
   </div>
   <%= render "layouts/footer" %>
