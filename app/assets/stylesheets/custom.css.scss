@@ -15,6 +15,7 @@ p{
 }
 
 #main_container{
+  background:url(images/bg.png);
   width:1200px;
   height:auto;
   margin:auto;
@@ -65,17 +66,17 @@ padding:0 5px 0 5px;
 }
 /*---------------- menu tab----------------------*/
 #menu_tab{
-  background:url(images/menu_bg.png) no-repeat center;
+  background-color:#31a95b;
   background-size: 1200px 40px;
   width:1200px;
   height:40px;
 }
 ul.menu {
-  background:url(images/menu_bg.png) no-repeat center;
-  background-size: 1182px 40px;
+  background-color:#31a95b;
+  background-size: 1170px 40px;
   list-style-type:none;
   float:left;
-  display:block; width:1182px;
+  display:block; width:1170px;
   margin:0px;
   padding:0px;
 }
@@ -142,6 +143,7 @@ a.nav:hover{
 
 /*-------------------carousel-inner------------------------*/
 #myCarousel {
+  background: #fff;
   .carousel-inner > .item > img,
     .carousel-inner > .item > a > img {
         height: 400px;
@@ -208,7 +210,8 @@ span.current{
 
 /*-------------left_content------------------*/
 .left_content{
-  width:180px;
+  background: #fff;
+  width:200px;
   float:left;
   padding:0 0 0 5px;
 }
@@ -226,7 +229,7 @@ span.current{
 }
 /*--------left menu---------*/
 ul.left_menu{
-  width:180px;
+  width:200px;
   padding-left:10px;
   margin:0px;
   list-style:none;
@@ -358,15 +361,16 @@ a.join{
 }
 /*center content--------------------------*/
 .center_content{
-  width:1000px;
-  float:left;
+  background: #fff;
+  width:980px;
+  float:right;
   padding:5px 0px 0px 50px;
 }
 
 .center_title_bar{
-  width:950px;
+  width:980px;
   height:31px;
-  float:left;
+  float:right;
   padding:0 0 0 10px;
   line-height:31px;
   font-size:12px;

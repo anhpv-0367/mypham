@@ -11,7 +11,7 @@
         <div class="prod_box">
           <div class="center_prod_box">
             <div class="product_img">
-              <a href="/products/<%= product.id %>">
+              <a href="/products/<%= product.id %>-<%= product.name.split(" ").join("-").downcase %>">
                 <%= image_tag( product.avatar_url, size:"171x171") if product.avatar? %>
               </a>
             </div>
